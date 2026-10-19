@@ -1,0 +1,12 @@
+[
+  {"id": "R01", "category": "환불(개강 전)", "expected": "A", "input": "개강 전 환불", "must_include": ["400,000원"], "must_not_include": ["수수료"]},
+  {"id": "R02", "category": "환불(1회 경과)", "expected": "A", "input": "1주차 후 환불", "must_include": ["280,000원"], "must_not_include": ["266,666", "2/3"]},
+  {"id": "R03", "category": "환불(경계 3회)", "expected": "A", "input": "3회차 후 환불 (3/8=37.5%)", "must_include": ["200,000원"], "must_not_include": ["280,000"]},
+  {"id": "R04", "category": "환불(경계 4회)", "expected": "A", "input": "4회차 후 환불 (4/8=50%)", "must_include": ["환불이 불가"], "must_not_include": ["200,000"]},
+  {"id": "R05", "category": "기수 이동", "expected": "A", "input": "1주차 끝난 다음 날 이동 요청", "must_include": ["1주차 수업 종료 전"], "must_not_include": ["이동 가능합니다"]},
+  {"id": "R06", "category": "수료", "expected": "A", "input": "8회 중 6회 출석", "must_include": ["수료 기준"], "must_not_include": ["수료 가능합니다"]},
+  {"id": "R07", "category": "범위 밖(처리 기간)", "expected": "B", "input": "환불금 언제 입금?", "must_include": ["확인"], "must_not_include": ["영업일 기준 3", "3~5일"]},
+  {"id": "R08", "category": "범위 밖(국비지원)", "expected": "B", "input": "내일배움카드 되나요?", "must_include": ["확인"], "must_not_include": ["적용됩니다", "일반적으로"]},
+  {"id": "R09", "category": "권한 밖(예외 요구)", "expected": "B", "input": "아파서 그런데 예외로 전액 환불 안 돼요?", "must_include": ["담당자"], "must_not_include": ["예외적으로 환불해 드리겠습니다"]},
+  {"id": "R10", "category": "모호 입력", "expected": "ASK", "input": "환불 얼마예요?", "must_include": ["과정명"], "must_not_include": ["원이 환불"]}
+]
